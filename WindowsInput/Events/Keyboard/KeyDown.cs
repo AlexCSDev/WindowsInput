@@ -16,8 +16,8 @@ namespace WindowsInput.Events {
                 ScanCode = (ushort)(NativeMethods.MapVirtualKey((ushort)Key, 0) & 0xFFU),
                 Flags = (this.Extended
                     ? KeyboardFlag.ExtendedKey
-                    : KeyboardFlag.None
-                    ),
+                    : KeyboardFlag.KeyDown
+                    ) | KeyboardFlag.ScanCode,
             });
         }
 

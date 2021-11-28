@@ -16,7 +16,7 @@ namespace WindowsInput.Events {
                 Flags = (Extended
                     ? KeyboardFlag.KeyUp | KeyboardFlag.ExtendedKey
                     : KeyboardFlag.KeyUp
-                    ),
+                    ) | KeyboardFlag.ScanCode,
             });
         }
 

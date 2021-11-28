@@ -32,6 +32,8 @@ namespace WindowsInput.Events {
                 yield return new KeyDown(item);
             }
 
+            yield return new Wait(300);
+
             foreach (var item in Keys.Reverse()) {
                 yield return new KeyUp(item);
             }
