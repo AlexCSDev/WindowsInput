@@ -9,6 +9,7 @@ namespace WindowsInput.Events {
         private IEnumerable<IEvent> CreateChildren() {
             return new IEvent[] {
                 new KeyDown(Key, Extended),
+                new Wait(300),
                 new KeyUp(Key, Extended),
             };
         }

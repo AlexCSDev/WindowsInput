@@ -12,7 +12,7 @@ namespace WindowsInput.Events {
         private IEnumerable<IEvent> CreateChildren() {
             yield return new RawInput(new KEYBDINPUT() {
                 KeyCode = Key,
-                ScanCode = (ushort)(NativeMethods.MapVirtualKey((ushort)Key, 0) & 0xFFU),
+                ScanCode = (byte)NativeMethods.MapVirtualKey((byte)Key, 0),
                 Flags = (Extended
                     ? KeyboardFlag.KeyUp | KeyboardFlag.ExtendedKey
                     : KeyboardFlag.KeyUp
