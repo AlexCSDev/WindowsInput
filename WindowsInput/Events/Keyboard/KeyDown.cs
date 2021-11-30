@@ -13,11 +13,11 @@ namespace WindowsInput.Events {
         private IEnumerable<IEvent> CreateChildren() {
             yield return new RawInput(new KEYBDINPUT() {
                 KeyCode = Key,
-                ScanCode = (byte)NativeMethods.MapVirtualKey((byte)Key, 0),
+                ScanCode = (UInt16)NativeMethods.MapVirtualKey((UInt16)Key, 0),
                 Flags = (this.Extended
                     ? KeyboardFlag.KeyDown | KeyboardFlag.ExtendedKey
                     : KeyboardFlag.KeyDown
-                    ) | KeyboardFlag.ScanCode,
+                    ),
             });
         }
 
